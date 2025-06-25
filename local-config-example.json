@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "apifox-mcp-pro": {
+      "command": "node",
+      "args": [
+        "/Users/xiaogaiguo/Apifox-MCP/dist/index.js"
+      ],
+      "env": {
+        "APIFOX_ACCESS_TOKEN": "your_apifox_access_token_here"
+      }
+    }
+  }
+}

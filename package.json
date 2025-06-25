@@ -1,0 +1,77 @@
+{
+  "name": "apifox-mcp-pro",
+  "version": "1.0.0",
+  "description": "Enhanced Apifox MCP Service with comprehensive API management capabilities for Claude and Cursor",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "test": "vitest",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write src",
+    "prepublishOnly": "npm run build",
+    "postinstall": "node scripts/postinstall.js"
+  },
+  "bin": {
+    "apifox-mcp-pro": "./dist/index.js",
+    "apifox-mcp": "./dist/index.js"
+  },
+  "files": [
+    "dist/",
+    "scripts/",
+    "README.md",
+    "USAGE.md",
+    ".env.example",
+    "claude-desktop-config.json",
+    "cursor-mcp-config.json"
+  ],
+  "keywords": [
+    "apifox",
+    "mcp",
+    "api",
+    "management",
+    "claude",
+    "cursor",
+    "openapi",
+    "swagger",
+    "ai-tools"
+  ],
+  "author": "Apifox MCP Pro Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/apifox-mcp-pro.git"
+  },
+  "homepage": "https://github.com/your-username/apifox-mcp-pro#readme",
+  "bugs": {
+    "url": "https://github.com/your-username/apifox-mcp-pro/issues"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.2.0",
+    "js-yaml": "^4.1.0",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+} 

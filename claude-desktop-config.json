@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "apifox-mcp-pro": {
+      "command": "npx",
+      "args": [
+        "apifox-mcp-pro"
+      ],
+      "env": {
+        "APIFOX_ACCESS_TOKEN": "your_apifox_access_token_here"
+      }
+    }
+  }
+}
