@@ -105,7 +105,7 @@ Environment Variables:
   APIFOX_BASE_URL        Apifox API base URL (optional)
   LOG_LEVEL              Log level: debug, info, warn, error (default: info)
 
-For more information, visit: https://github.com/your-username/apifox-mcp-pro
+For more information, visit: https://github.com/guocong-bincai/Apifox_mcp_pro
 `);
 }
 

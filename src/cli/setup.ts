@@ -224,7 +224,7 @@ Examples:
 Environment Variables:
   APIFOX_ACCESS_TOKEN    Your Apifox access token
 
-For more information, visit: https://github.com/your-username/apifox-mcp-pro
+For more information, visit: https://github.com/guocong-bincai/Apifox_mcp_pro
 `);
   }
 }
