@@ -59,7 +59,7 @@
     "server": {
       "name": "apifox-mcp-pro",
       "description": "Enhanced Apifox MCP Service with diagnostic and information capabilities",
-      "version": "1.1.5",
+      "version": "1.1.6",
       "capabilities": {
         "tools": {}
       },

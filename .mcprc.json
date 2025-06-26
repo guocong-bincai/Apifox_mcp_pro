@@ -6,7 +6,7 @@
   },
   "server": {
     "name": "apifox-mcp-pro",
-    "version": "1.1.5",
+    "version": "1.1.6",
     "command": "npx",
     "args": ["apifox-mcp-pro"],
     "timeout": 30000,

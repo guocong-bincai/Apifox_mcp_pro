@@ -1,7 +1,7 @@
 {
   "name": "apifox-mcp-pro",
   "displayName": "Apifox MCP Pro",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Enhanced Apifox MCP Service with diagnostic and information capabilities for Claude Desktop and Cursor",
   "longDescription": "Due to Apifox's extremely limited Open API (only 3 basic import/export endpoints), this project provides 9 diagnostic and information tools instead of full API management capabilities. Most API management functions require using the Apifox web interface or desktop client.",
   "author": {
@@ -114,7 +114,7 @@
   "installation": {
     "npm": {
       "package": "apifox-mcp-pro",
-      "version": "^1.1.5"
+      "version": "^1.1.6"
     },
     "requirements": {
       "node": ">=18.0.0"
