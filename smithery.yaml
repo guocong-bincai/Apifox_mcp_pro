@@ -1,0 +1,98 @@
+name: apifox-mcp-pro
+version: 1.1.5
+description: Enhanced Apifox MCP Service with diagnostic and information capabilities for Claude Desktop and Cursor
+
+# MCP服务器配置
+server:
+  type: stdio
+  command: node
+  args: ["dist/index.js"]
+  
+# 环境变量配置
+environment:
+  required:
+    - name: APIFOX_ACCESS_TOKEN
+      description: "Your Apifox Personal Access Token from https://www.apifox.cn/"
+      type: string
+      secret: true
+  optional:
+    - name: APIFOX_BASE_URL
+      description: "Apifox API base URL"
+      type: string
+      default: "https://api.apifox.com"
+    - name: LOG_LEVEL
+      description: "Log level (debug, info, warn, error)"
+      type: string
+      default: "info"
+
+# 工具能力
+capabilities:
+  tools:
+    - name: apifox_project_info
+      description: Get MCP functionality overview and limitations
+    - name: apifox_check_access
+      description: Check token validity and access permissions
+    - name: apifox_api_info
+      description: Get API management limitations explanation
+    - name: apifox_check_project_access
+      description: Check specific project access
+    - name: apifox_folder_info
+      description: Folder management limitations
+    - name: apifox_environment_info
+      description: Environment management limitations
+    - name: apifox_schema_info
+      description: Data model management limitations
+    - name: apifox_test_info
+      description: Test case management limitations
+    - name: apifox_import_export_info
+      description: Import/export functionality info
+
+# 标签
+tags:
+  - apifox
+  - api-management
+  - diagnostic
+  - information
+  - claude
+  - cursor
+
+# 许可证
+license: MIT
+
+# 作者信息
+author:
+  name: Apifox MCP Pro Team
+  url: https://github.com/guocong-bincai/Apifox_mcp_pro
+
+# 仓库信息
+repository:
+  type: git
+  url: https://github.com/guocong-bincai/Apifox_mcp_pro.git
+
+# 文档链接
+documentation:
+  readme: https://github.com/guocong-bincai/Apifox_mcp_pro#readme
+  usage: https://github.com/guocong-bincai/Apifox_mcp_pro/blob/main/USAGE.md
+
+# 部署配置
+deployment:
+  # Docker配置
+  docker:
+    build_context: "."
+    dockerfile: "Dockerfile"
+    ports:
+      - "3000:3000"
+    
+  # 健康检查
+  health_check:
+    command: ["node", "-e", "process.exit(0)"]
+    interval: 30s
+    timeout: 10s
+    retries: 3
+
+# 限制说明
+limitations:
+  - "Due to Apifox's extremely limited Open API, most advanced features are not available"
+  - "This tool primarily serves as a diagnostic and information utility"
+  - "Most API management functions require using the Apifox web interface or desktop client"
+  - "Only 9 diagnostic tools are available instead of full API management capabilities" 

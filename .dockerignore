@@ -1,0 +1,41 @@
+# 依赖目录
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 开发文件
+src/
+*.ts
+tsconfig.json
+.env
+.env.local
+.env.production
+
+# 构建工具
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# 日志文件
+logs/
+*.log
+
+# 测试文件
+coverage/
+.nyc_output/
+
+# Git
+.git/
+.gitignore
+
+# 其他
+*.md
+!README.md
+.prettierrc
+.eslintrc* 

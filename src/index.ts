@@ -45,7 +45,7 @@ function handleCLI(): boolean {
     
     case '--version':
     case '-v':
-      console.log('Apifox MCP Pro v1.1.4');
+      console.log('Apifox MCP Pro v1.1.5');
       return true;
     
     case '--help':
