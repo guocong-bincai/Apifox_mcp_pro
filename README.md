@@ -12,27 +12,45 @@ Enhanced Apifox MCP Service with comprehensive API management capabilities for C
 
 | Feature | Official MCP | Apifox MCP Pro |
 |---------|--------------|----------------|
-| Tool Count | 3 tools | **33+ tools** |
-| Project Management | ❌ | ✅ Full support |
-| API CRUD | ❌ | ✅ Full support |
-| Batch Operations | ❌ | ✅ Supported |
+| Tool Count | 3 tools | **9 tools** (Limited) |
+| Project Management | ❌ | ⚠️ Basic info only |
+| API CRUD | ❌ | ❌ Not supported |
+| Batch Operations | ❌ | ❌ Not supported |
 | Cursor Support | ❌ | ✅ Native support |
 | NPM Installation | ❌ | ✅ One-click install |
 | CLI Tools | ❌ | ✅ Complete CLI |
 
+### ⚠️ Important Limitations
+
+**Due to Apifox's extremely limited Open API, most advanced features are not available:**
+
+- ❌ **API Interface Management** - Cannot list, create, update, or delete APIs
+- ❌ **Folder Management** - No folder operations supported
+- ❌ **Environment Management** - Cannot manage environments
+- ❌ **Data Model Management** - No schema operations
+- ❌ **Test Case Management** - Cannot manage test cases
+- ❌ **Search Functionality** - API search not supported
+- ❌ **Batch Operations** - No bulk operations available
+
+**What IS available:**
+- ✅ **Basic Project Info** - Get project information and access checks
+- ✅ **Limitation Explanations** - Clear documentation of what's not supported
+- ✅ **Token Validation** - Check if your access token works
+- ✅ **Diagnostic Tools** - Help understand API limitations
+
+**Reason:** Apifox officially provides only 3 basic import/export API endpoints. Most management functions require using the Apifox web interface or desktop client.
+
 ### Features
 
-- 🚀 **33+ MCP Tools** - Comprehensive API management functionality
-- 📋 **Project Management** - Create, read, update, delete projects
-- 🔧 **API Interface Management** - Full CRUD operations for APIs
-- 📁 **Folder Organization** - Organize APIs with folders
-- 🔄 **Import/Export** - Support multiple formats (OpenAPI, Postman, etc.)
-- 🌍 **Environment Management** - Manage different environments
-- 📊 **Data Models** - JSON Schema support
-- 🧪 **Test Cases** - Create and run test cases
-- 🎯 **Batch Operations** - Efficient bulk operations
+- 🚀 **9 MCP Tools** - Basic diagnostic and information tools
+- 📋 **Project Info** - Get basic project information and access status
+- ⚠️ **Limitation Awareness** - Clear documentation of API restrictions
+- 🔍 **Diagnostic Tools** - Check token validity and project access
 - 💻 **Cross-Platform** - Works with Claude Desktop and Cursor
 - 📦 **NPM Package** - Easy installation via npm
+- 🛠️ **CLI Tools** - Setup and configuration utilities
+
+**Note:** Due to Apifox's limited Open API, advanced management features are not available. This tool primarily serves as a diagnostic and information utility.
 
 ### Quick Start
 
@@ -127,75 +145,84 @@ For Claude Desktop, add to your `claude_desktop_config.json`:
 }
 ```
 
-### Available Tools
+### Available Tools (9 total)
 
-#### Project Management (6 tools)
-- `apifox_list_projects` - List all projects
-- `apifox_get_project` - Get project details
-- `apifox_create_project` - Create new project
-- `apifox_update_project` - Update project information
-- `apifox_delete_project` - Delete project
-- `apifox_get_project_stats` - Get project statistics
+#### Project Information (2 tools)
+- `apifox_project_info` - Get MCP functionality overview and limitations
+- `apifox_check_access` - Check token validity and access permissions
 
-#### API Management (9 tools)
-- `apifox_list_apis` - List APIs in project
-- `apifox_get_api` - Get API details
-- `apifox_create_api` - Create new API
-- `apifox_update_api` - Update API information
-- `apifox_delete_api` - Delete API
-- `apifox_search_apis` - Search APIs
-- `apifox_batch_delete_apis` - Batch delete APIs
-- `apifox_batch_update_api_status` - Batch update API status
-- `apifox_batch_move_apis` - Batch move APIs to folder
+#### API Information (2 tools)
+- `apifox_api_info` - Get API management limitations explanation
+- `apifox_check_project_access` - Check specific project access
 
-#### Folder Management (4 tools)
-- `apifox_list_folders` - List folders in project
-- `apifox_create_folder` - Create new folder
-- `apifox_update_folder` - Update folder information
-- `apifox_delete_folder` - Delete folder
+#### Feature Limitation Info (5 tools)
+- `apifox_folder_info` - Folder management limitations
+- `apifox_environment_info` - Environment management limitations  
+- `apifox_schema_info` - Data model management limitations
+- `apifox_test_info` - Test case management limitations
+- `apifox_import_export_info` - Import/export functionality info
 
-#### Import/Export (4 tools)
-- `apifox_import_from_url` - Import from URL
-- `apifox_import_from_data` - Import from data
-- `apifox_export_project` - Export project data
-- `apifox_sync_from_url` - Sync from URL
+### ❌ Removed Tools (Previously Listed but Not Functional)
 
-#### Environment Management (4 tools)
-- `apifox_list_environments` - List environments
-- `apifox_create_environment` - Create new environment
-- `apifox_update_environment` - Update environment
-- `apifox_delete_environment` - Delete environment
+The following tools were removed because Apifox's Open API doesn't support them:
 
-#### Data Models (4 tools)
-- `apifox_list_schemas` - List data models
-- `apifox_create_schema` - Create new data model
-- `apifox_update_schema` - Update data model
-- `apifox_delete_schema` - Delete data model
+#### API Management (9 removed)
+- ~~`apifox_list_apis`~~ - API listing not supported
+- ~~`apifox_get_api`~~ - API details not accessible
+- ~~`apifox_create_api`~~ - API creation not supported
+- ~~`apifox_update_api`~~ - API updates not supported
+- ~~`apifox_delete_api`~~ - API deletion not supported
+- ~~`apifox_search_apis`~~ - Search functionality unavailable
+- ~~`apifox_batch_delete_apis`~~ - Batch operations not supported
+- ~~`apifox_batch_update_api_status`~~ - Status updates not supported
+- ~~`apifox_batch_move_apis`~~ - Moving APIs not supported
 
-#### Test Cases (5 tools)
-- `apifox_list_test_cases` - List test cases
-- `apifox_create_test_case` - Create new test case
-- `apifox_update_test_case` - Update test case
-- `apifox_delete_test_case` - Delete test case
-- `apifox_run_test_case` - Run test case
+#### Project Management (4 removed)
+- ~~`apifox_list_projects`~~ - Limited API access
+- ~~`apifox_create_project`~~ - Creation not supported
+- ~~`apifox_update_project`~~ - Updates not supported
+- ~~`apifox_delete_project`~~ - Deletion not supported
+
+#### All Other Management Tools (14 removed)
+- All folder, environment, schema, test case, and import/export management tools
+
+**Reason for Removal:** Apifox's Open API is extremely limited and only provides 3 basic import/export endpoints. All management operations require using the Apifox web interface or desktop application.
 
 ### Usage Examples
 
-#### Creating a New Project
+#### Getting MCP Information
 
 ```typescript
 // In Claude or Cursor, you can ask:
-"Create a new Apifox project called 'My API Project' with description 'A sample API project'"
+"What Apifox MCP Pro features are available?"
 
 // This will call:
-apifox_create_project({
-  name: "My API Project",
-  description: "A sample API project",
-  visibility: "private"
-})
+apifox_project_info()
 ```
 
-#### Managing APIs
+#### Checking Access
+
+```typescript
+// Check if your token works:
+"Check my Apifox access permissions"
+
+// This will call:
+apifox_check_access()
+```
+
+#### Understanding Limitations
+
+```typescript
+// Get information about API management limitations:
+"Why can't I list APIs in my Apifox project?"
+
+// This will call:
+apifox_api_info()
+```
+
+#### Alternative Solutions
+
+Since most management features are not available through the API, consider these alternatives:
 
 ```typescript
 // List all APIs in a project

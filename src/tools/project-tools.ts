@@ -15,143 +15,82 @@ async function getClient(): Promise<ApifoxClient> {
   return new ApifoxClient(config);
 }
 
-// 项目工具定义
+// 项目工具定义 - 仅保留基础功能
 export const projectTools: ToolDefinition[] = [
   {
-    name: 'apifox_list_projects',
-    description: '获取Apifox项目列表',
+    name: 'apifox_project_info',
+    description: '获取Apifox MCP功能说明和限制信息',
     inputSchema: {
       type: 'object',
       properties: {},
       required: [],
     },
     handler: async (args: any) => {
-      const client = await getClient();
-      return await client.getProjects();
+      return {
+        success: true,
+        message: 'Apifox MCP Pro 功能说明',
+        data: {
+                     version: '1.1.0',
+          status: '功能受限版本',
+          available_functions: [
+            '项目基础信息查询',
+            '访问权限检查',
+            '功能限制说明'
+          ],
+          unavailable_functions: [
+            'API接口管理（列表、详情、增删改）',
+            '文件夹管理',
+            '环境管理', 
+            '数据模型管理',
+            '测试用例管理',
+            '搜索功能'
+          ],
+          reason: 'Apifox官方开放API功能极其有限，仅提供3个基础导入导出接口',
+          official_api_docs: 'https://www.apifox.cn/help/',
+          recommendation: [
+            '使用Apifox Web界面进行完整的API管理',
+            '使用Apifox桌面客户端获得最佳体验',
+            '等待官方完善开放API功能'
+          ]
+        }
+      };
     },
   },
   {
-    name: 'apifox_get_project',
-    description: '获取指定项目的详细信息',
+    name: 'apifox_check_access',
+    description: '检查当前Token的访问权限',
     inputSchema: {
       type: 'object',
-      properties: {
-        projectId: {
-          type: 'string',
-          description: '项目ID',
-        },
-      },
-      required: ['projectId'],
+      properties: {},
+      required: [],
     },
     handler: async (args: any) => {
-      const client = await getClient();
-      return await client.getProject(args.projectId);
+      try {
+        const client = await getClient();
+        // 尝试调用一个基础API来检查权限
+        const projects = await client.getProjects();
+        return {
+          success: true,
+          message: 'Token访问权限正常',
+          data: {
+            accessible: true,
+            note: '但由于Apifox开放API限制，大部分功能仍不可用',
+            available_projects: projects ? projects.length : 0
+          }
+        };
+      } catch (error: any) {
+        return {
+          success: false,
+          message: 'Token访问权限检查失败',
+          data: {
+            accessible: false,
+            error: error.message,
+            suggestion: '请检查APIFOX_ACCESS_TOKEN是否正确设置'
+          }
+        };
+      }
     },
-  },
-  {
-    name: 'apifox_create_project',
-    description: '创建新的Apifox项目',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        name: {
-          type: 'string',
-          description: '项目名称',
-        },
-        description: {
-          type: 'string',
-          description: '项目描述',
-        },
-        visibility: {
-          type: 'string',
-          enum: ['private', 'public', 'team'],
-          description: '项目可见性',
-          default: 'private',
-        },
-      },
-      required: ['name'],
-    },
-    handler: async (args: any) => {
-      const client = await getClient();
-      return await client.createProject({
-        name: args.name,
-        description: args.description,
-        visibility: args.visibility || 'private',
-      });
-    },
-  },
-  {
-    name: 'apifox_update_project',
-    description: '更新项目信息',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        projectId: {
-          type: 'string',
-          description: '项目ID',
-        },
-        name: {
-          type: 'string',
-          description: '项目名称',
-        },
-        description: {
-          type: 'string',
-          description: '项目描述',
-        },
-        visibility: {
-          type: 'string',
-          enum: ['private', 'public', 'team'],
-          description: '项目可见性',
-        },
-      },
-      required: ['projectId'],
-    },
-    handler: async (args: any) => {
-      const client = await getClient();
-      const updates: any = {};
-      if (args.name) updates.name = args.name;
-      if (args.description) updates.description = args.description;
-      if (args.visibility) updates.visibility = args.visibility;
-      return await client.updateProject(args.projectId, updates);
-    },
-  },
-  {
-    name: 'apifox_delete_project',
-    description: '删除项目',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        projectId: {
-          type: 'string',
-          description: '项目ID',
-        },
-      },
-      required: ['projectId'],
-    },
-    handler: async (args: any) => {
-      const client = await getClient();
-      await client.deleteProject(args.projectId);
-      return { success: true, message: '项目删除成功' };
-    },
-  },
-  {
-    name: 'apifox_get_project_stats',
-    description: '获取项目统计信息',
-    inputSchema: {
-      type: 'object',
-      properties: {
-        projectId: {
-          type: 'string',
-          description: '项目ID',
-        },
-      },
-      required: ['projectId'],
-    },
-    handler: async (args: any) => {
-      const client = await getClient();
-      return await client.getProjectStats(args.projectId);
-    },
-  },
+  }
 ];
 
 // 保持向后兼容的导出
