@@ -6,7 +6,15 @@
 
 ## English
 
-Enhanced Apifox MCP Service with comprehensive API management capabilities for Claude Desktop and Cursor.
+**⚠️ 项目状态说明 / Project Status**
+
+由于Apifox官方开放API功能极其有限（仅提供3个基础导入导出接口），本项目已从最初计划的33+个工具简化为9个诊断和信息查询工具。大部分API管理功能需要使用Apifox Web界面或桌面客户端。
+
+Due to Apifox's extremely limited Open API (only 3 basic import/export endpoints), this project has been simplified from the originally planned 33+ tools to 9 diagnostic and information tools. Most API management features require using the Apifox web interface or desktop client.
+
+---
+
+Enhanced Apifox MCP Service with basic diagnostic and information capabilities for Claude Desktop and Cursor.
 
 ### 🆚 Comparison with Official MCP
 
@@ -96,17 +104,36 @@ npm run dev setup --both --local
 
 ### Configuration
 
+#### Getting Your Apifox Access Token
+
+1. 登录 [Apifox 官网](https://www.apifox.cn/)
+2. 进入个人设置 → API 访问令牌
+3. 创建新的访问令牌
+4. 复制生成的令牌（格式通常为 `APS-xxxxxxxxxx`）
+
+⚠️ **安全提醒**：
+- 请妥善保管您的访问令牌，不要在代码中硬编码
+- 不要在公共仓库中提交包含真实令牌的配置文件
+- 使用环境变量或配置文件来管理令牌
+
 #### Environment Variables
 
 Create a `.env` file or set environment variables:
 
 ```bash
-# Required
+# Required - 从Apifox个人设置中获取
 APIFOX_ACCESS_TOKEN=your_apifox_access_token_here
 
 # Optional
 APIFOX_BASE_URL=https://api.apifox.com  # Default API base URL
 LOG_LEVEL=info                          # Log level: debug, info, warn, error
+```
+
+**示例 .env 文件**：
+```bash
+# .env 文件示例（请替换为您的真实令牌）
+APIFOX_ACCESS_TOKEN=APS-your-actual-token-here
+LOG_LEVEL=info
 ```
 
 #### Cursor Configuration
