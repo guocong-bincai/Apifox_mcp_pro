@@ -1,6 +1,6 @@
 {
   "name": "apifox-mcp-pro",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "Enhanced Apifox MCP Service with comprehensive API management capabilities for Claude and Cursor",
   "main": "dist/index.js",
   "type": "module",
@@ -64,13 +64,28 @@
         "tools": {}
       },
       "environment": {
-        "required": ["APIFOX_ACCESS_TOKEN"],
-        "optional": ["APIFOX_BASE_URL", "LOG_LEVEL"]
+        "required": [
+          "APIFOX_ACCESS_TOKEN"
+        ],
+        "optional": [
+          "APIFOX_BASE_URL",
+          "LOG_LEVEL"
+        ]
       }
     },
     "registry": "https://registry.mcp.so",
-    "categories": ["productivity", "development", "api-tools"],
-    "tags": ["apifox", "api-management", "diagnostic", "claude", "cursor"],
+    "categories": [
+      "productivity",
+      "development",
+      "api-tools"
+    ],
+    "tags": [
+      "apifox",
+      "api-management",
+      "diagnostic",
+      "claude",
+      "cursor"
+    ],
     "toolCount": 9
   },
   "dependencies": {
@@ -99,4 +114,4 @@
   "publishConfig": {
     "access": "public"
   }
-} 
+}
