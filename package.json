@@ -25,6 +25,9 @@
     ".env.example",
     "claude-desktop-config.json",
     "cursor-mcp-config.json",
+    "mcp.json",
+    ".mcprc.json",
+    "MCP_SO_PUBLISH.md",
     "Dockerfile",
     "smithery.yaml",
     ".dockerignore"
@@ -56,7 +59,7 @@
     "server": {
       "name": "apifox-mcp-pro",
       "description": "Enhanced Apifox MCP Service with diagnostic and information capabilities",
-             "version": "1.1.5",
+      "version": "1.1.5",
       "capabilities": {
         "tools": {}
       },
@@ -64,7 +67,11 @@
         "required": ["APIFOX_ACCESS_TOKEN"],
         "optional": ["APIFOX_BASE_URL", "LOG_LEVEL"]
       }
-    }
+    },
+    "registry": "https://registry.mcp.so",
+    "categories": ["productivity", "development", "api-tools"],
+    "tags": ["apifox", "api-management", "diagnostic", "claude", "cursor"],
+    "toolCount": 9
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^0.5.0",

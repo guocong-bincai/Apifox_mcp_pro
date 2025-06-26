@@ -1,0 +1,176 @@
+{
+  "name": "apifox-mcp-pro",
+  "displayName": "Apifox MCP Pro",
+  "version": "1.1.5",
+  "description": "Enhanced Apifox MCP Service with diagnostic and information capabilities for Claude Desktop and Cursor",
+  "longDescription": "Due to Apifox's extremely limited Open API (only 3 basic import/export endpoints), this project provides 9 diagnostic and information tools instead of full API management capabilities. Most API management functions require using the Apifox web interface or desktop client.",
+  "author": {
+    "name": "Apifox MCP Pro Team",
+    "email": "support@apifox-mcp-pro.com",
+    "url": "https://github.com/guocong-bincai/Apifox_mcp_pro"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/guocong-bincai/Apifox_mcp_pro",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/guocong-bincai/Apifox_mcp_pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/guocong-bincai/Apifox_mcp_pro/issues"
+  },
+  "keywords": [
+    "apifox",
+    "mcp",
+    "model-context-protocol",
+    "api-management",
+    "diagnostic",
+    "claude",
+    "cursor",
+    "ai-tools"
+  ],
+  "categories": [
+    "productivity",
+    "development",
+    "api-tools"
+  ],
+  "mcpVersion": "2024-11-05",
+  "server": {
+    "command": "npx",
+    "args": ["apifox-mcp-pro"],
+    "env": {
+      "APIFOX_ACCESS_TOKEN": {
+        "required": true,
+        "description": "Your Apifox Personal Access Token from https://www.apifox.cn/",
+        "type": "string",
+        "secret": true
+      },
+      "APIFOX_BASE_URL": {
+        "required": false,
+        "description": "Apifox API base URL",
+        "type": "string",
+        "default": "https://api.apifox.com"
+      },
+      "LOG_LEVEL": {
+        "required": false,
+        "description": "Log level (debug, info, warn, error)",
+        "type": "string",
+        "default": "info"
+      }
+    }
+  },
+  "tools": [
+    {
+      "name": "apifox_project_info",
+      "description": "Get MCP functionality overview and limitations",
+      "category": "information"
+    },
+    {
+      "name": "apifox_check_access",
+      "description": "Check token validity and access permissions",
+      "category": "diagnostic"
+    },
+    {
+      "name": "apifox_api_info",
+      "description": "Get API management limitations explanation",
+      "category": "information"
+    },
+    {
+      "name": "apifox_check_project_access",
+      "description": "Check specific project access permissions",
+      "category": "diagnostic"
+    },
+    {
+      "name": "apifox_folder_info",
+      "description": "Get folder management limitations explanation",
+      "category": "information"
+    },
+    {
+      "name": "apifox_environment_info",
+      "description": "Get environment management limitations explanation",
+      "category": "information"
+    },
+    {
+      "name": "apifox_schema_info",
+      "description": "Get data model management limitations explanation",
+      "category": "information"
+    },
+    {
+      "name": "apifox_test_info",
+      "description": "Get test case management limitations explanation",
+      "category": "information"
+    },
+    {
+      "name": "apifox_import_export_info",
+      "description": "Get import/export functionality information",
+      "category": "information"
+    }
+  ],
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false,
+    "sampling": false
+  },
+  "installation": {
+    "npm": {
+      "package": "apifox-mcp-pro",
+      "version": "^1.1.5"
+    },
+    "requirements": {
+      "node": ">=18.0.0"
+    }
+  },
+  "configuration": {
+    "claude": {
+      "example": {
+        "mcpServers": {
+          "apifox-mcp-pro": {
+            "command": "npx",
+            "args": ["apifox-mcp-pro"],
+            "env": {
+              "APIFOX_ACCESS_TOKEN": "your_apifox_access_token_here"
+            }
+          }
+        }
+      }
+    },
+    "cursor": {
+      "example": {
+        "mcpServers": {
+          "apifox-mcp-pro": {
+            "command": "npx",
+            "args": ["apifox-mcp-pro"],
+            "env": {
+              "APIFOX_ACCESS_TOKEN": "your_apifox_access_token_here"
+            }
+          }
+        }
+      }
+    }
+  },
+  "documentation": {
+    "quickStart": "https://github.com/guocong-bincai/Apifox_mcp_pro#quick-start",
+    "usage": "https://github.com/guocong-bincai/Apifox_mcp_pro/blob/main/USAGE.md",
+    "examples": "https://github.com/guocong-bincai/Apifox_mcp_pro#usage-examples"
+  },
+  "limitations": [
+    "Due to Apifox's extremely limited Open API, most advanced features are not available",
+    "This tool primarily serves as a diagnostic and information utility",
+    "Most API management functions require using the Apifox web interface or desktop client",
+    "Only 9 diagnostic tools are available instead of full API management capabilities"
+  ],
+  "alternatives": [
+    "Use Apifox Web interface for complete API management",
+    "Use Apifox desktop client for best experience",
+    "Wait for official to improve Open API functionality"
+  ],
+  "tags": [
+    "apifox",
+    "api-management",
+    "diagnostic",
+    "information-tools",
+    "claude-integration",
+    "cursor-integration",
+    "limited-functionality"
+  ]
+} 

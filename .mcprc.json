@@ -1,0 +1,19 @@
+{
+  "registry": "https://registry.mcp.so",
+  "publish": {
+    "access": "public",
+    "registry": "https://registry.mcp.so"
+  },
+  "server": {
+    "name": "apifox-mcp-pro",
+    "version": "1.1.5",
+    "command": "npx",
+    "args": ["apifox-mcp-pro"],
+    "timeout": 30000,
+    "retries": 3
+  },
+  "environment": {
+    "NODE_ENV": "production",
+    "LOG_LEVEL": "info"
+  }
+} 
