@@ -29,6 +29,7 @@
     ".mcprc.json",
     "MCP_SO_PUBLISH.md",
     "MCPBAR_SUBMISSION.md",
+    "PULSEMCP_SUBMISSION.md",
     "Dockerfile",
     "smithery.yaml",
     ".dockerignore"
