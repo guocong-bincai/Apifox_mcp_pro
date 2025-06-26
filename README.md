@@ -1,4 +1,5 @@
 # Apifox MCP Pro
+[![smithery badge](https://smithery.ai/badge/@guocong-bincai/apifox_mcp_pro)](https://smithery.ai/server/@guocong-bincai/apifox_mcp_pro)
 
 [English](#english) | [中文](#中文)
 
@@ -61,6 +62,14 @@ Enhanced Apifox MCP Service with basic diagnostic and information capabilities f
 **Note:** Due to Apifox's limited Open API, advanced management features are not available. This tool primarily serves as a diagnostic and information utility.
 
 ### Quick Start
+
+#### Installing via Smithery
+
+To install apifox_mcp_pro for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@guocong-bincai/apifox_mcp_pro):
+
+```bash
+npx -y @smithery/cli install @guocong-bincai/apifox_mcp_pro --client claude
+```
 
 #### Option 1: NPM Installation (Recommended)
 

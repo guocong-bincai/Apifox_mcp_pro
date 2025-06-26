@@ -1,0 +1,29 @@
+# Smithery configuration file: https://smithery.ai/docs/build/project-config
+
+startCommand:
+  type: stdio
+  commandFunction:
+    # A JS function that produces the CLI command based on the given config to start the MCP on stdio.
+    |-
+    (config) => ({ command: 'node', args: ['dist/index.js'], env: { APIFOX_ACCESS_TOKEN: config.apifoxAccessToken, APIFOX_BASE_URL: config.apifoxBaseUrl, LOG_LEVEL: config.logLevel } })
+  configSchema:
+    # JSON Schema defining the configuration options for the MCP.
+    type: object
+    required:
+      - apifoxAccessToken
+    properties:
+      apifoxAccessToken:
+        type: string
+        description: Your Apifox access token (APS-...)
+      apifoxBaseUrl:
+        type: string
+        default: https://api.apifox.com
+        description: Base URL for Apifox API
+      logLevel:
+        type: string
+        default: info
+        description: Log level
+  exampleConfig:
+    apifoxAccessToken: APS-your-access-token-here
+    apifoxBaseUrl: https://api.apifox.com
+    logLevel: info
