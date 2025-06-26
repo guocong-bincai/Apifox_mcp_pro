@@ -383,33 +383,57 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 中文
 
-为 Claude Desktop 和 Cursor 提供全面 API 管理功能的增强版 Apifox MCP 服务。
+**⚠️ 项目状态说明**
+
+由于Apifox官方开放API功能极其有限（仅提供3个基础导入导出接口），本项目已从最初计划的33+个工具简化为9个诊断和信息查询工具。大部分API管理功能需要使用Apifox Web界面或桌面客户端。
+
+---
+
+为 Claude Desktop 和 Cursor 提供基础诊断和信息功能的 Apifox MCP 服务。
 
 ### 🆚 与官方 MCP 对比
 
 | 功能 | 官方 MCP | Apifox MCP Pro |
 |------|----------|----------------|
-| 工具数量 | 3个 | **33+个** |
-| 项目管理 | ❌ | ✅ 完整支持 |
-| API CRUD | ❌ | ✅ 完整支持 |
-| 批量操作 | ❌ | ✅ 支持 |
+| 工具数量 | 3个 | **9个工具**（受限） |
+| 项目管理 | ❌ | ⚠️ 仅基础信息 |
+| API CRUD | ❌ | ❌ 不支持 |
+| 批量操作 | ❌ | ❌ 不支持 |
 | Cursor 支持 | ❌ | ✅ 原生支持 |
 | NPM 安装 | ❌ | ✅ 一键安装 |
 | CLI 工具 | ❌ | ✅ 完整 CLI |
 
+### ⚠️ 重要限制
+
+**由于Apifox开放API功能极其有限，大部分高级功能不可用：**
+
+- ❌ **API接口管理** - 无法列出、创建、更新或删除API
+- ❌ **文件夹管理** - 不支持文件夹操作
+- ❌ **环境管理** - 无法管理环境
+- ❌ **数据模型管理** - 不支持Schema操作
+- ❌ **测试用例管理** - 无法管理测试用例
+- ❌ **搜索功能** - 不支持API搜索
+- ❌ **批量操作** - 不支持批量操作
+
+**可用功能：**
+- ✅ **基础项目信息** - 获取项目信息和访问检查
+- ✅ **限制说明** - 清晰的不支持功能文档
+- ✅ **令牌验证** - 检查访问令牌是否有效
+- ✅ **诊断工具** - 帮助理解API限制
+
+**原因：** Apifox官方仅提供3个基础导入导出API端点。大部分管理功能需要使用Apifox Web界面或桌面客户端。
+
 ### 功能特性
 
-- 🚀 **33+ MCP 工具** - 全面的 API 管理功能
-- 📋 **项目管理** - 创建、查询、更新、删除项目
-- 🔧 **API 接口管理** - 完整的 API CRUD 操作
-- 📁 **文件夹组织** - 使用文件夹组织 API
-- 🔄 **导入导出** - 支持多种格式（OpenAPI、Postman 等）
-- 🌍 **环境管理** - 管理不同环境
-- 📊 **数据模型** - JSON Schema 支持
-- 🧪 **测试用例** - 创建和运行测试用例
-- 🎯 **批量操作** - 高效的批量操作
+- 🚀 **9个MCP工具** - 基础诊断和信息工具
+- 📋 **项目信息** - 获取基础项目信息和访问状态
+- ⚠️ **限制说明** - 清晰的API限制文档
+- 🔍 **诊断工具** - 检查令牌有效性和项目访问
 - 💻 **跨平台** - 支持 Claude Desktop 和 Cursor
 - 📦 **NPM 包** - 通过 npm 轻松安装
+- 🛠️ **CLI 工具** - 设置和配置工具
+
+**注意：** 由于Apifox开放API限制，高级管理功能不可用。此工具主要作为诊断和信息查询工具使用。
 
 ### 快速开始
 
@@ -504,96 +528,88 @@ LOG_LEVEL=info                          # 日志级别：debug, info, warn, erro
 }
 ```
 
-### 可用工具
+### 可用工具（共9个）
 
-#### 项目管理（6个工具）
-- `apifox_list_projects` - 列出所有项目
-- `apifox_get_project` - 获取项目详情
-- `apifox_create_project` - 创建新项目
-- `apifox_update_project` - 更新项目信息
-- `apifox_delete_project` - 删除项目
-- `apifox_get_project_stats` - 获取项目统计
+#### 项目信息（2个工具）
+- `apifox_project_info` - 获取MCP功能概览和限制信息
+- `apifox_check_access` - 检查令牌有效性和访问权限
 
-#### API 管理（9个工具）
-- `apifox_list_apis` - 列出项目中的 API
-- `apifox_get_api` - 获取 API 详情
-- `apifox_create_api` - 创建新 API
-- `apifox_update_api` - 更新 API 信息
-- `apifox_delete_api` - 删除 API
-- `apifox_search_apis` - 搜索 API
-- `apifox_batch_delete_apis` - 批量删除 API
-- `apifox_batch_update_api_status` - 批量更新 API 状态
-- `apifox_batch_move_apis` - 批量移动 API 到文件夹
+#### API信息（2个工具）
+- `apifox_api_info` - 获取API管理限制说明
+- `apifox_check_project_access` - 检查特定项目访问权限
 
-#### 文件夹管理（4个工具）
-- `apifox_list_folders` - 列出项目中的文件夹
-- `apifox_create_folder` - 创建新文件夹
-- `apifox_update_folder` - 更新文件夹信息
-- `apifox_delete_folder` - 删除文件夹
+#### 功能限制信息（5个工具）
+- `apifox_folder_info` - 文件夹管理限制说明
+- `apifox_environment_info` - 环境管理限制说明
+- `apifox_schema_info` - 数据模型管理限制说明
+- `apifox_test_info` - 测试用例管理限制说明
+- `apifox_import_export_info` - 导入导出功能信息
 
-#### 导入导出（4个工具）
-- `apifox_import_from_url` - 从 URL 导入
-- `apifox_import_from_data` - 从数据导入
-- `apifox_export_project` - 导出项目数据
-- `apifox_sync_from_url` - 从 URL 同步
+### ❌ 已删除的工具（之前列出但不可用）
 
-#### 环境管理（4个工具）
-- `apifox_list_environments` - 列出环境
-- `apifox_create_environment` - 创建新环境
-- `apifox_update_environment` - 更新环境
-- `apifox_delete_environment` - 删除环境
+由于Apifox开放API不支持，以下工具已被删除：
 
-#### 数据模型（4个工具）
-- `apifox_list_schemas` - 列出数据模型
-- `apifox_create_schema` - 创建新数据模型
-- `apifox_update_schema` - 更新数据模型
-- `apifox_delete_schema` - 删除数据模型
+#### API管理（9个已删除）
+- ~~`apifox_list_apis`~~ - 不支持API列表查询
+- ~~`apifox_get_api`~~ - 无法访问API详情
+- ~~`apifox_create_api`~~ - 不支持API创建
+- ~~`apifox_update_api`~~ - 不支持API更新
+- ~~`apifox_delete_api`~~ - 不支持API删除
+- ~~`apifox_search_apis`~~ - 搜索功能不可用
+- ~~`apifox_batch_delete_apis`~~ - 不支持批量操作
+- ~~`apifox_batch_update_api_status`~~ - 不支持状态更新
+- ~~`apifox_batch_move_apis`~~ - 不支持移动API
 
-#### 测试用例（5个工具）
-- `apifox_list_test_cases` - 列出测试用例
-- `apifox_create_test_case` - 创建新测试用例
-- `apifox_update_test_case` - 更新测试用例
-- `apifox_delete_test_case` - 删除测试用例
-- `apifox_run_test_case` - 运行测试用例
+#### 项目管理（4个已删除）
+- ~~`apifox_list_projects`~~ - API访问受限
+- ~~`apifox_create_project`~~ - 不支持创建
+- ~~`apifox_update_project`~~ - 不支持更新
+- ~~`apifox_delete_project`~~ - 不支持删除
+
+#### 其他所有管理工具（14个已删除）
+- 所有文件夹、环境、数据模型、测试用例和导入导出管理工具
+
+**删除原因：** Apifox开放API功能极其有限，仅提供3个基础导入导出端点。所有管理操作需要使用Apifox Web界面或桌面应用程序。
 
 ### 使用示例
 
-#### 创建新项目
+#### 获取MCP信息
 
 ```typescript
 // 在 Claude 或 Cursor 中，您可以询问：
-"创建一个名为 'My API Project' 的新 Apifox 项目，描述为 'A sample API project'"
+"Apifox MCP Pro 有哪些可用功能？"
 
 // 这将调用：
-apifox_create_project({
-  name: "My API Project",
-  description: "A sample API project",
-  visibility: "private"
-})
+apifox_project_info()
 ```
 
-#### 管理 API
+#### 检查访问权限
 
 ```typescript
-// 列出项目中的所有 API
-"显示项目 12345 中的所有 API"
+// 检查令牌是否有效：
+"检查我的 Apifox 访问权限"
 
-// 创建新 API
-"在项目 12345 中创建一个 GET API，路径为 /users/{id}，用于获取用户详情"
-
-// 搜索 API
-"在项目 12345 中查找所有 POST API"
+// 这将调用：
+apifox_check_access()
 ```
 
-#### 批量操作
+#### 了解限制
 
 ```typescript
-// 批量更新 API 状态
-"将 ID 为 [1, 2, 3] 的 API 标记为 'released'"
+// 获取API管理限制信息：
+"为什么我无法列出 Apifox 项目中的 API？"
 
-// 批量移动 API
-"将 API [4, 5, 6] 移动到文件夹 'v2-apis'"
+// 这将调用：
+apifox_api_info()
 ```
+
+#### 替代解决方案
+
+由于大部分管理功能通过API不可用，请考虑以下替代方案：
+
+- 使用 [Apifox Web界面](https://www.apifox.cn/) 进行完整的API管理
+- 使用 Apifox 桌面客户端获得最佳体验
+- 等待官方完善开放API功能
 
 ### CLI 命令
 

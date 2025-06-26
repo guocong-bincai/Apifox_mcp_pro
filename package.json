@@ -1,6 +1,6 @@
 {
   "name": "apifox-mcp-pro",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Enhanced Apifox MCP Service with comprehensive API management capabilities for Claude and Cursor",
   "main": "dist/index.js",
   "type": "module",
