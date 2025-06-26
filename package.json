@@ -28,6 +28,7 @@
     "mcp.json",
     ".mcprc.json",
     "MCP_SO_PUBLISH.md",
+    "MCPBAR_SUBMISSION.md",
     "Dockerfile",
     "smithery.yaml",
     ".dockerignore"
@@ -35,15 +36,19 @@
   "keywords": [
     "apifox",
     "mcp",
+    "mcp-server",
     "model-context-protocol",
-    "api",
-    "management",
+    "api-management",
+    "diagnostic",
+    "information",
     "claude",
     "cursor",
+    "ai-tools",
     "openapi",
     "swagger",
-    "ai-tools",
-    "mcp-server"
+    "mcp-bar",
+    "productivity",
+    "development"
   ],
   "author": "Apifox MCP Pro Team",
   "license": "MIT",

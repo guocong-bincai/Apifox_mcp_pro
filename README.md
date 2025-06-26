@@ -1,5 +1,11 @@
 # Apifox MCP Pro
 
+[![NPM Version](https://img.shields.io/npm/v/apifox-mcp-pro)](https://www.npmjs.com/package/apifox-mcp-pro)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/guocong-bincai/Apifox_mcp_pro)](https://github.com/guocong-bincai/Apifox_mcp_pro/stargazers)
+[![MCP.Bar](https://img.shields.io/badge/MCP.Bar-Ready-green)](https://www.mcp.bar)
+[![Smithery](https://img.shields.io/badge/Smithery-Compatible-blue)](https://smithery.ai)
+
 [English](#english) | [中文](#中文)
 
 ---
