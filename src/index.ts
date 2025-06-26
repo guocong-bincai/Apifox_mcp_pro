@@ -45,20 +45,7 @@ function handleCLI(): boolean {
     
     case '--version':
     case '-v':
-      // 读取package.json中的版本
-      try {
-        const fs = require('fs');
-        const path = require('path');
-        const packageJson = JSON.parse(
-          fs.readFileSync(
-            path.join(__dirname, '..', 'package.json'),
-            'utf-8'
-          )
-        );
-        console.log(`Apifox MCP Pro v${packageJson.version}`);
-      } catch (error) {
-        console.log('Apifox MCP Pro (version unknown)');
-      }
+      console.log('Apifox MCP Pro v1.1.2');
       return true;
     
     case '--help':

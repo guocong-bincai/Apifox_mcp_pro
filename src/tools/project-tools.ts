@@ -30,7 +30,7 @@ export const projectTools: ToolDefinition[] = [
         success: true,
         message: 'Apifox MCP Pro 功能说明',
         data: {
-                     version: '1.1.1',
+                     version: '1.1.2',
           status: '功能受限版本',
           available_functions: [
             '项目基础信息查询',
